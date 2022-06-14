@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/d4d443adde.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="bg-back"></div>
+        <div class="container py-3 container-main d-flex 0">
+
+            <div class="leftSide d-flex flex-column">
+                <div class="d-flex bg-light-grey flex-grow-1 justify-content-between border-end border-lightgrey">
+                    <div class="Utente d-flex">
+                        <div class="Utente-img">
+                            <img class="rounded-circle p-2" src="img/avatar_io.jpg" alt="">
+                        </div>
+                        <div class="Utente-name align-self-center ms-1">
+                            <h3>Utente</h3>
+                        </div>
+                    </div>
+                    <div class="align-self-center pe-4 fs-3 text color-fawesome ">
+                        <i class="fa-solid fa-circle-notch px-1"></i>
+                        <i class="fa-solid fa-message px-1"></i>
+                        <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                    </div>
+                </div>
+                <div class="notifications py-2 ps-3">
+                    <div class="d-flex">
+                        <div class="bg-white rounded-circle circle-bell d-flex justify-content-center">
+                            <i class="fa-solid fa-bell-slash fs-3 align-self-center"></i>
+                        </div>
+                        <div class="ps-2 align-self-center">
+                            <div>Ricevi notifiche di nuovi messaggi</div>
+                            <div class="text-decoration-underline text-muted">Attiva notifiche dekstop</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="serchBar p-2  d-flex bg-light">
+                    <div class="bg-white px-3 py-1">
+                        <i class="fa-solid fa-search fs-5 color-lens"></i>
+                    </div>
+                    <input type="text" class="border border-light flex-grow-1"
+                        placeholder="Cerca o inizia una nuova chat">
+                </div>
+                <div class="d-flex flex-column overflow-auto">
+                    <div v-for="(utente,indice) in contacts"
+                        class=" container d-flex flex-grow-1 justify-content-between bg-white">
+                        <div class="Utente d-flex ">
+                            <div class="Utente-img">
+                                <img class="rounded-circle p-2" :src="`img/avatar${contacts[indice].avatar}.jpg`"
+                                    alt="">
+                            </div>
+                            <div class="Utente-name align-self-center ms-1">
+                                <h3>{{contacts[indice].name}}</h3>
+                                <div class="text-muted">Ultimo messaggio inviato</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="pt-1">12.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide flex-grow-1 d-flex flex-column">
+                <div class="d-flex bg-light-grey  justify-content-between">
+                    <div class="Utente d-flex">
+                        <div class="Utente-img">
+                            <img class="rounded-circle p-2" src="img/avatar_1.jpg" alt="">
+                        </div>
+                        <div class="Utente-name align-self-center ms-1">
+                            <h3>Utente</h3>
+                            <div class="text-muted">Ultimo Accesso oggi alle 12:000</div>
+                        </div>
+                    </div>
+                    <div class="align-self-center pe-4 fs-3 text color-fawesome">
+                        <i class="fa-solid fa-search"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical px-1"></i>
+                    </div>
+                </div>
+                <div class="container-mess flex-grow-1 overflow-auto">
+                    <div class="container p-5 d-flex flex-column">
+                        <div class="align-self-end my-3 ps-2  py-2 rounded-3 mess-send justify-content-between d-flex">
+                            <div class="ps-2 pe-5">ciaooooo</div>
+                            <div class="pe-1 ps-5 date-small text-muted align-self-end">16.15</div>
+
+                        </div>
+                        <div
+                            class="align-self-start my-3 ps-2  py-2 rounded-3 mess-recived justify-content-between d-flex">
+                            <div class="ps-2 pe-5">ciaooooo</div>
+                            <div class=" pe-1 ps-5 date-small text-muted align-self-end">16.15</div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="container-input bg-wp-color ">
+                    <div class="input-group ">
+                        <button class="btn btn-outline-secondary px-4 border-0" type="button">
+                            <i class="fa-regular fa-face-smile fs-4"></i>
+                        </button>
+                        <div class="p-1 flex-grow-1">
+                            <input type="text" class="form-control" placeholder="Scrivi qui...">
+                        </div>
+                        <div class="input-group-append d-flex">
+                            <button class="btn btn-outline-secondary px-3 border-0" type="button">
+                                <i class="fa-solid fa-microphone align-self-center fs-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
