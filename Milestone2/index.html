@@ -54,7 +54,7 @@
                 </div>
                 <div class="d-flex flex-column overflow-auto h-100">
                     <div @click="showCurrentMess(utente)" v-for="(utente,indice) in contacts "
-                        v-bind:class="{'utenteSelezionato': currentContact.contactVisible}"
+                        v-bind:class="{'utenteSelezionato': utente.contactVisible}"
                         class=" container d-flex flex-grow-1 justify-content-between bg-white">
                         <div class="Utente d-flex ">
                             <div class="Utente-img">
