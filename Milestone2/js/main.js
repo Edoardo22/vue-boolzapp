@@ -192,8 +192,7 @@ const appVue = new Vue({
     },
 
     sendMessage: function () {
-      this.messaggioNuovo = this.currentMessage;
-      if (messaggioNuovo != "") {
+      if (this.messaggioNuovo != "") {
         this.currentContact.messages.push({
           date: "10/01/2020 15:30:55",
           message: this.currentMessage,
