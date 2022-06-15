@@ -179,7 +179,7 @@ const appVue = new Vue({
     contacts: contatti,
     currentContact: contatti[0],
     currentMessage: "",
-
+    messaggioNuovo: "",
   },
 
   methods: {
