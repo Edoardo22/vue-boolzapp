@@ -200,6 +200,14 @@ const appVue = new Vue({
           status: "sent",
         });
       }
+      setTimeout(() => {
+        this.currentContact.messages.push({
+          date: "10/01/2020 15:30:55",
+          message: "ok",
+          status: "received",
+        });
+      }, 1000);
     },
+
   },
 });
