@@ -188,9 +188,7 @@ const appVue = new Vue({
       console.log(this.currentContact);
       this.currentContact.contactVisible = true;
       console.log(this.contactVisible);
-      if (this.currentContact.contactVisible == true) {
-        this.currentContact.contactVisible = false;
-      }
+
 
     },
 

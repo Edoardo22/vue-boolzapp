@@ -3,7 +3,7 @@ const contatti = [
     name: "Michele",
     avatar: "_1",
     visible: true,
-    contactVisible: false,
+    contactVisible: true,
     messages: [
       {
         date: "10/01/2020 15:30:55",
@@ -186,17 +186,17 @@ const appVue = new Vue({
     showCurrentMess: function (currentContact) {
       this.currentContact = currentContact;
       console.log(this.currentContact);
-      this.contactVisible = true;
+      this.currentContact.contactVisible = true;
       console.log(this.contactVisible);
+
 
     },
 
     sendMessage: function () {
-      this.messaggioNuovo = this.currentMessage;
-      if (messaggioNuovo != "") {
+      if (this.messaggioNuovo != "") {
         this.currentContact.messages.push({
           date: "10/01/2020 15:30:55",
-          message: this.currentMessage,
+          message: this.messaggioNuovo,
           status: "sent",
         });
       }
