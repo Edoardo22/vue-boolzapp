@@ -169,10 +169,14 @@ const appVue = new Vue({
 
   data: {
     contacts: contatti,
+    currentContact: contatti[0],
   },
 
   methods: {
-
+    showCurrentMess: function (currentContact) {
+      this.currentContact = currentContact;
+      console.log(this.currentContact);
+    },
   },
 
 });

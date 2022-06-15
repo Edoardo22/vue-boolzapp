@@ -16,10 +16,10 @@
 <body>
     <div id="app">
         <div class="bg-back"></div>
-        <div class="container py-3 container-main d-flex 0">
+        <div class="container py-3 container-main d-flex">
 
             <div class="leftSide d-flex flex-column">
-                <div class="d-flex bg-light-grey flex-grow-1 justify-content-between border-end border-lightgrey">
+                <div class="d-flex bg-light-grey justify-content-between border-end border-lightgrey">
                     <div class="Utente d-flex">
                         <div class="Utente-img">
                             <img class="rounded-circle p-2" src="img/avatar_io.jpg" alt="">
@@ -52,8 +52,8 @@
                     <input type="text" class="border border-light flex-grow-1"
                         placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <div class="d-flex flex-column overflow-auto">
-                    <div v-for="(utente,indice) in contacts"
+                <div class="d-flex flex-column overflow-auto h-100">
+                    <div @click="showCurrentMess(utente)" v-for="(utente,indice) in contacts"
                         class=" container d-flex flex-grow-1 justify-content-between bg-white">
                         <div class="Utente d-flex ">
                             <div class="Utente-img">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rightSide flex-grow-1 d-flex flex-column">
+            <div class="rightSide flex-grow-1 d-flex flex-column flex-shrink-0">
                 <div class="d-flex bg-light-grey  justify-content-between">
                     <div class="Utente d-flex">
                         <div class="Utente-img">
@@ -79,7 +79,7 @@
                         </div>
                         <div class="Utente-name align-self-center ms-1">
                             <h3>Utente</h3>
-                            <div class="text-muted">Ultimo Accesso oggi alle 12:000</div>
+                            <div class="text-muted">Ultimo Accesso oggi alle 12:00</div>
                         </div>
                     </div>
                     <div class="align-self-center pe-4 fs-3 text color-fawesome">
